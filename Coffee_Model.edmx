@@ -71,10 +71,14 @@
         <Function Name="usp_deleteOrder_items" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="int" Mode="In" />
           <Parameter Name="ModifiedUserName" Type="varchar" Mode="In" />
-          <Parameter Name="IsActive" Type="bit" Mode="In" />
         </Function>
         <Function Name="usp_deletePayment_details" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="ModifiedUserName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_DeletePayment_Order_Cart" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="paymentid" Type="int" Mode="In" />
+          <Parameter Name="sessionid" Type="int" Mode="In" />
           <Parameter Name="ModifiedUserName" Type="varchar" Mode="In" />
         </Function>
         <Function Name="usp_deleteShopping_session" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -233,7 +237,6 @@
           <FunctionImport Name="deleteOrder_items" ReturnType="Collection(Int32)">
             <Parameter Name="id" Mode="In" Type="Int32" />
             <Parameter Name="ModifiedUserName" Mode="In" Type="String" />
-            <Parameter Name="IsActive" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="deletePayment_details" ReturnType="Collection(Int32)">
             <Parameter Name="id" Mode="In" Type="Int32" />
@@ -331,7 +334,12 @@
           <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SelectUser_Byid" ReturnType="Collection(CoffeeModel.SelectUser_Byid_1)">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DeletePayment_Order_Cart" ReturnType="Collection(Int32)">
+            <Parameter Name="paymentid" Mode="In" Type="Int32" />
+            <Parameter Name="sessionid" Mode="In" Type="Int32" />
+            <Parameter Name="ModifiedUserName" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="SelectCartItem_1">
@@ -715,6 +723,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DeletePayment_Order_Cart" FunctionName="CoffeeModel.Store.usp_DeletePayment_Order_Cart" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

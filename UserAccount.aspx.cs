@@ -33,7 +33,7 @@ namespace CoffeeStore1
             catch (Exception ex)
             {
                 int rowsAdded = 0;
-                rowsAdded = Model.User.AddLogMessage(Session["UserName"].ToString(), ex.Message);
+                rowsAdded = Model.User.AddLogMessage(ex.Message, Session["UserName"].ToString());
                 Response.Redirect("Error.aspx", false);
             }
         }
@@ -95,7 +95,7 @@ namespace CoffeeStore1
             catch (Exception ex)
             {
                 int rowsAdded = 0;
-                rowsAdded = Model.User.AddLogMessage(Session["UserName"].ToString(), ex.Message);
+                rowsAdded = Model.User.AddLogMessage(ex.Message, Session["UserName"].ToString());
                 Response.Redirect("Error.aspx", false);
             }
         }
@@ -142,7 +142,7 @@ namespace CoffeeStore1
             catch (Exception ex)
             {
                 int rowsAdded = 0;
-                rowsAdded = Model.User.AddLogMessage(Session["UserName"].ToString(), ex.Message);
+                rowsAdded = Model.User.AddLogMessage(ex.Message, Session["UserName"].ToString());
                 Response.Redirect("Error.aspx", false);
             }
         }
@@ -169,7 +169,7 @@ namespace CoffeeStore1
             catch (Exception ex)
             {
                 int rowsAdded = 0;
-                rowsAdded = Model.User.AddLogMessage(Session["UserName"].ToString(), ex.Message);
+                rowsAdded = Model.User.AddLogMessage(ex.Message, Session["UserName"].ToString());
                 Response.Redirect("Error.aspx", false);
             }
         }

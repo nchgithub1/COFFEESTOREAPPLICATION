@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace CoffeeStore1
 {
@@ -13,18 +9,12 @@ namespace CoffeeStore1
         {
             try
             {
-                //if (!IsPostBack)
-                //{
-                //    if (Session["UserFullName"] == null)
-                //    {
-                //        Response.Redirect("Login.aspx", false);
-                //    }
-                //}
+
             }
             catch (Exception ex)
             {
                 int rowsAdded = 0;
-                rowsAdded = Model.User.AddLogMessage(Session["UserName"].ToString(), ex.Message);
+                rowsAdded = Model.User.AddLogMessage(ex.Message, Session["UserName"].ToString());
                 Response.Redirect("Error.aspx", false);
             }
         }

@@ -62,7 +62,6 @@
     <FunctionImport Name="deleteOrder_items" ReturnType="Collection(Int32)">
       <Parameter Name="id" Mode="In" Type="Int32" />
       <Parameter Name="ModifiedUserName" Mode="In" Type="String" />
-      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
     </FunctionImport>
     <FunctionImport Name="deletePayment_details" ReturnType="Collection(Int32)">
       <Parameter Name="id" Mode="In" Type="Int32" />
@@ -161,6 +160,11 @@
     </FunctionImport>
     <FunctionImport Name="SelectUser_Byid" ReturnType="Collection(CoffeeModel.SelectUser_Byid_1)">
       <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DeletePayment_Order_Cart" ReturnType="Collection(Int32)">
+      <Parameter Name="paymentid" Mode="In" Type="Int32" />
+      <Parameter Name="sessionid" Mode="In" Type="Int32" />
+      <Parameter Name="ModifiedUserName" Mode="In" Type="String" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="SelectCartItem_1">

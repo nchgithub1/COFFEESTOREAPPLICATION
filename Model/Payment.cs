@@ -78,5 +78,13 @@ namespace CoffeeStore1.Model
             int rowsUpdated = (int)e.updatePayment_details(paymentid, orderid, amount, provider, status, nameoncard, cardnumber, expirymmyy, securitycode, zipcode, shipppingusercontactaddress, shippingaddress, username).FirstOrDefault();
             return rowsUpdated;
         }
+
+        //Delete cart_items, order(s) and payment details for sessionid and paymentID
+        public static int DeletePaymentOrdersCartItems(int paymentid, int sessionid, string username)
+        {
+            CoffeeEntities e = new CoffeeEntities();
+            int rowsAdded = (int)e.DeletePayment_Order_Cart(paymentid, sessionid, username).FirstOrDefault();
+            return rowsAdded;
+        }
     }
 }

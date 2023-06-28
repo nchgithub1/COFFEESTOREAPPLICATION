@@ -19,7 +19,7 @@ namespace CoffeeStore1
                 int rowsAdded = 0;
                 if (Session["UserName"] != null)
                 {
-                    rowsAdded = Model.User.AddLogMessage(Session["UserName"].ToString(), ex.Message);
+                    rowsAdded = Model.User.AddLogMessage(ex.Message, Session["UserName"].ToString());
                 }
                 else
                 {
@@ -69,7 +69,7 @@ namespace CoffeeStore1
                 int rowsAdded = 0;
                 if (Session["UserName"] != null)
                 {
-                    rowsAdded = Model.User.AddLogMessage(Session["UserName"].ToString(), ex.Message);
+                    rowsAdded = Model.User.AddLogMessage(ex.Message, Session["UserName"].ToString());
                 }
                 else
                 {

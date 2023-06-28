@@ -13,7 +13,6 @@
                             width: 800px
                         }
                     </style>
-
                     <asp:Panel ID="pnlPaymentDetails" runat="server" BorderColor="Wheat" BorderWidth="2px">
                         <table border="0" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva','Verdana', 'sans-serif'; text-align: left; width: 100%; vertical-align: central;">
                             <tr>
@@ -116,7 +115,7 @@
                                 </td>
                                 <td>&nbsp;</td>
                                 <td>
-                                    <asp:TextBox ID="txtSecurityCode" CssClass="content" TextMode="Password"  MaxLength="160" Width="200px" runat="server" Text=""></asp:TextBox>
+                                    <asp:TextBox ID="txtSecurityCode" CssClass="content" TextMode="Password" MaxLength="160" Width="200px" runat="server" Text=""></asp:TextBox>
                                 </td>
                                 <td>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ForeColor="Red" Font-Bold="true"
@@ -150,7 +149,7 @@
                                 </td>
                                 <td>&nbsp;</td>
                                 <td>
-                                    <asp:CheckBox ID="ckShippingUserContactAddress" runat="server"  Checked="false" Font-Bold="true" Text="Use Contact Address" AutoPostBack="true" OnCheckedChanged="ckShippingUserContactAddress_CheckedChanged" />
+                                    <asp:CheckBox ID="ckShippingUserContactAddress" runat="server" Checked="false" Font-Bold="true" Text="Use Contact Address" AutoPostBack="true" OnCheckedChanged="ckShippingUserContactAddress_CheckedChanged" />
                                 </td>
                                 <td>&nbsp;</td>
                                 <tr>

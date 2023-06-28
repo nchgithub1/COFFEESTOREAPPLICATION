@@ -236,7 +236,7 @@ namespace CoffeeStore1
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("deleteOrder_details", idParameter, modifiedUserNameParameter);
         }
     
-        public virtual ObjectResult<Nullable<int>> deleteOrder_items(Nullable<int> id, string modifiedUserName, Nullable<bool> isActive)
+        public virtual ObjectResult<Nullable<int>> deleteOrder_items(Nullable<int> id, string modifiedUserName)
         {
             var idParameter = id.HasValue ?
                 new ObjectParameter("id", id) :
@@ -246,11 +246,7 @@ namespace CoffeeStore1
                 new ObjectParameter("ModifiedUserName", modifiedUserName) :
                 new ObjectParameter("ModifiedUserName", typeof(string));
     
-            var isActiveParameter = isActive.HasValue ?
-                new ObjectParameter("IsActive", isActive) :
-                new ObjectParameter("IsActive", typeof(bool));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("deleteOrder_items", idParameter, modifiedUserNameParameter, isActiveParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("deleteOrder_items", idParameter, modifiedUserNameParameter);
         }
     
         public virtual ObjectResult<Nullable<int>> deletePayment_details(Nullable<int> id, string modifiedUserName)
@@ -605,6 +601,23 @@ namespace CoffeeStore1
                 new ObjectParameter("id", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SelectUser_Byid_1>("SelectUser_Byid", idParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> DeletePayment_Order_Cart(Nullable<int> paymentid, Nullable<int> sessionid, string modifiedUserName)
+        {
+            var paymentidParameter = paymentid.HasValue ?
+                new ObjectParameter("paymentid", paymentid) :
+                new ObjectParameter("paymentid", typeof(int));
+    
+            var sessionidParameter = sessionid.HasValue ?
+                new ObjectParameter("sessionid", sessionid) :
+                new ObjectParameter("sessionid", typeof(int));
+    
+            var modifiedUserNameParameter = modifiedUserName != null ?
+                new ObjectParameter("ModifiedUserName", modifiedUserName) :
+                new ObjectParameter("ModifiedUserName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("DeletePayment_Order_Cart", paymentidParameter, sessionidParameter, modifiedUserNameParameter);
         }
     }
 }

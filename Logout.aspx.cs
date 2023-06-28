@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web;
 
 namespace CoffeeStore1
 {
@@ -8,9 +9,10 @@ namespace CoffeeStore1
         {
             if (!IsPostBack)
             {
-                Session["UserFullName"] = null;
-                Session["UserId"] = null;
-                Session["UserName"] = null;
+                Session["PaymentExistsYN"] = Session["OrderID"] = Session["PaymentID"] = Session["grandAmount"] = 
+                Session["UserFullName"] =  Session["UserId"] = Session["UserName"] = null;
+                HttpContext.Current.Session.Clear();
+                HttpContext.Current.Session.Abandon();
                 Response.Redirect("Login.aspx", false);
             }
         }

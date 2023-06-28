@@ -11,21 +11,26 @@ namespace CoffeeStore1
             get { return Boolean.Parse(Session["PaymentExistsYN"].ToString()); }
             set { Session["PaymentExistsYN"] = value; }
         }
-        public int orderId
+        private int orderId
         {
             get { return int.Parse(Session["OrderID"].ToString()); }
             set { Session["OrderID"] = value; }
         }
-
-        public int paymentId
+        private int paymentId
         {
             get { return int.Parse(Session["PaymentID"].ToString()); }
             set { Session["PaymentID"] = value; }
         }
-        public float grandAmount
+        private float grandAmount
         {
             get { return float.Parse(Session["grandAmount"].ToString()); }
             set { Session["grandAmount"] = value; }
+        }
+        private bool _ClearedYN;
+        private bool ClearedYN
+        {
+            get { return _ClearedYN; }
+            set { _ClearedYN = value; }
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -33,6 +38,7 @@ namespace CoffeeStore1
             {
                 if (!IsPostBack)
                 {
+                  //  txtShippingAddress.ReadOnly = false;
                     if (Request.QueryString["paymentID"] != null)
                     {
                         paymentId = int.Parse(Request.QueryString["paymentID"].ToString());
@@ -42,6 +48,7 @@ namespace CoffeeStore1
                     {
                         grandAmount = float.Parse(Request.QueryString["GrandAmount"].ToString());
                     }
+                    ClearedYN = false;
                     ClearData();
                     LoadData(paymentId);
                 }
@@ -49,7 +56,7 @@ namespace CoffeeStore1
             catch (Exception ex)
             {
                 int rowsAdded = 0;
-                rowsAdded = Model.User.AddLogMessage(Session["UserName"].ToString(), ex.Message);
+                rowsAdded = Model.User.AddLogMessage(ex.Message, Session["UserName"].ToString());
                 Response.Redirect("Error.aspx", false);
             }
         }
@@ -88,7 +95,10 @@ namespace CoffeeStore1
                             txtZipCode.Text = t.zipcode;
                             txtExpiryDate.Text = t.expirydatemmyy;
                             lstProvider.SelectedValue = t.provider;
-                            lblProviderStatus.Text = t.status;
+                            if (ClearedYN == false)
+                            {
+                                lblProviderStatus.Text = t.status;
+                            }
                             txtShippingAddress.Text = t.shippingaddress;
                             ckShippingUserContactAddress.Checked = t.shippingusercontactaddress;
                             orderId = t.orderid;
@@ -112,7 +122,7 @@ namespace CoffeeStore1
             catch (Exception ex)
             {
                 int rowsAdded = 0;
-                rowsAdded = Model.User.AddLogMessage(Session["UserName"].ToString(), ex.Message);
+                rowsAdded = Model.User.AddLogMessage(ex.Message, Session["UserName"].ToString());
                 Response.Redirect("Error.aspx", false);
             }
         }
@@ -159,8 +169,7 @@ namespace CoffeeStore1
                                 txtCardNumber.Text.Trim(), txtExpiryDate.Text, txtSecurityCode.Text, txtZipCode.Text, ckShippingUserContactAddress.Checked, txtShippingAddress.Text, Session["UserName"].ToString());
                             PaymentExistsYN = true;
                             Session["PaymentID"] = paymentId;
-                            //LoadData(paymentId);
-                            Response.Redirect("PaymentDetails.aspx?paymentID=" + paymentId.ToString() + "&GrandAmount=" + grandAmount.ToString(), false);
+                            Response.Redirect("OrderSummary.aspx?paymentID=" + paymentId.ToString() + "&GrandAmount=" + grandAmount.ToString(), false);
                         }
                     }
                 }
@@ -195,18 +204,15 @@ namespace CoffeeStore1
                                 txtCardNumber.Text.Trim(), txtExpiryDate.Text, txtSecurityCode.Text, txtZipCode.Text, ckShippingUserContactAddress.Checked, txtShippingAddress.Text, Session["UserName"].ToString());
                             PaymentExistsYN = true;
                             Session["PaymentID"] = paymentId;
-                            // LoadData(paymentId);
-                            Response.Redirect("PaymentDetails.aspx?paymentID=" + paymentId.ToString() + "&GrandAmount=" + grandAmount.ToString(), false);
+                            Response.Redirect("OrderSummary.aspx?paymentID=" + paymentId.ToString() + "&GrandAmount=" + grandAmount.ToString(), false);
                         }
                     }
-                   // Response.Redirect("PaymentDetails.aspx?paymentID=" + paymentId.ToString() + "&GrandAmount=" + grandAmount.ToString(), false);
-                    //  Response.Redirect("OrderReview.aspx?OrderID=" + orderId.ToString());
                 }
             }
             catch (Exception ex)
             {
                 int rowsAdded = 0;
-                rowsAdded = Model.User.AddLogMessage(Session["UserName"].ToString(), ex.Message);
+                rowsAdded = Model.User.AddLogMessage(ex.Message, Session["UserName"].ToString());
                 Response.Redirect("Error.aspx", false);
             }
         }
@@ -215,12 +221,13 @@ namespace CoffeeStore1
             try
             {
                 ClearData();
+                ClearedYN = true;
                 LoadData(paymentId);
             }
             catch (Exception ex)
             {
                 int rowsAdded = 0;
-                rowsAdded = Model.User.AddLogMessage(Session["UserName"].ToString(), ex.Message);
+                rowsAdded = Model.User.AddLogMessage(ex.Message, Session["UserName"].ToString());
                 Response.Redirect("Error.aspx", false);
             }
         }
@@ -235,18 +242,23 @@ namespace CoffeeStore1
                     if (res.Count > 0)
                     {
                         txtShippingAddress.Text = res[0].address + ", " + res[0].city + ", " + res[0].state + ", " + res[0].ZipCode;
+                        txtShippingAddress.ReadOnly = true;
                     }
                     else
                     {
                         LoadData(paymentId);
                     }
                 }
+                else
+                { 
+                    txtShippingAddress.ReadOnly = false; 
+                }
 
             }
             catch (Exception ex)
             {
                 int rowsAdded = 0;
-                rowsAdded = Model.User.AddLogMessage(Session["UserName"].ToString(), ex.Message);
+                rowsAdded = Model.User.AddLogMessage(ex.Message, Session["UserName"].ToString());
                 Response.Redirect("Error.aspx", false);
             }
         }

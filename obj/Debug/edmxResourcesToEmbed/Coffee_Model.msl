@@ -222,5 +222,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DeletePayment_Order_Cart" FunctionName="CoffeeModel.Store.usp_DeletePayment_Order_Cart" />
   </EntityContainerMapping>
 </Mapping>

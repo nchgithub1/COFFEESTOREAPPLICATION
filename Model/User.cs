@@ -1,8 +1,5 @@
-﻿using DevExpress.XtraRichEdit.Model;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
 namespace CoffeeStore1.Model
 {

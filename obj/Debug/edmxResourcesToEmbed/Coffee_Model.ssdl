@@ -66,10 +66,14 @@
   <Function Name="usp_deleteOrder_items" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id" Type="int" Mode="In" />
     <Parameter Name="ModifiedUserName" Type="varchar" Mode="In" />
-    <Parameter Name="IsActive" Type="bit" Mode="In" />
   </Function>
   <Function Name="usp_deletePayment_details" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="ModifiedUserName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="usp_DeletePayment_Order_Cart" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="paymentid" Type="int" Mode="In" />
+    <Parameter Name="sessionid" Type="int" Mode="In" />
     <Parameter Name="ModifiedUserName" Type="varchar" Mode="In" />
   </Function>
   <Function Name="usp_deleteShopping_session" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
