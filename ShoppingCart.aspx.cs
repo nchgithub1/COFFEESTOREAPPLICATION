@@ -107,20 +107,24 @@ namespace CoffeeStore1
 
         protected void btnContinuetoPayment_Click(object sender, EventArgs e)
         {
-            string strpaymentID = "0";
-            double grandAmount = 0.00;
-            if (Session["PaymentID"] != null)
+            List<SelectCartItem_BySessionID_1> resCartItems = Model.Product.GetCartItembySessionID(int.Parse(Session["ShoppingSessionID"].ToString()));
+            if (resCartItems != null && resCartItems.Count > 0)
             {
-                strpaymentID = Session["PaymentID"].ToString();
-            }
+                string strpaymentID = "0";
+                double grandAmount = 0.00;
+                if (Session["PaymentID"] != null)
+                {
+                    strpaymentID = Session["PaymentID"].ToString();
+                }
 
-            List<SelectCartItemGrandTotal_BySessionID_1> resCartItemsGrandTotal = Model.Product.GetCartItemGrandTotal_BySessionID(int.Parse(Session["ShoppingSessionID"].ToString()));
-            if (resCartItemsGrandTotal[0].Grand_Amount > 0)
-            {
-               grandAmount = double.Parse(resCartItemsGrandTotal[0].Grand_Amount.ToString());
-            }
+                List<SelectCartItemGrandTotal_BySessionID_1> resCartItemsGrandTotal = Model.Product.GetCartItemGrandTotal_BySessionID(int.Parse(Session["ShoppingSessionID"].ToString()));
+                if (resCartItemsGrandTotal[0].Grand_Amount > 0)
+                {
+                    grandAmount = double.Parse(resCartItemsGrandTotal[0].Grand_Amount.ToString());
+                }
 
-            Response.Redirect("PaymentDetails.aspx?paymentID=" + int.Parse(strpaymentID) + "&GrandAmount=" + grandAmount.ToString(), false);
+                Response.Redirect("PaymentDetails.aspx?paymentID=" + int.Parse(strpaymentID) + "&GrandAmount=" + grandAmount.ToString(), false);
+            }
         }
     }
 }

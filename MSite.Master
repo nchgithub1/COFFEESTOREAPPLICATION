@@ -1,0 +1,164 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MSite.master.cs" Inherits="CoffeeStore1.MSiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title><%: Page.Title %> - Coffee Store</title>
+
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- owl stylesheets -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <div id="dvheader">
+            <asp:Panel ID="pnlGuest_Panel" runat="server">
+                <!--header section start -->
+                <div class="header_section">
+                    <div class="container-fluid">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                            <div class="logo">
+                                <img src="images/CoffeeStore.png">
+                            </div>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="Login.aspx">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="About.aspx">About Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="Contact.aspx">Contact Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <asp:Label ID="lblGuest_User" runat="server" Text="Hello Guest!" ForeColor="Wheat"> </asp:Label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <!--header section end -->
+            </asp:Panel>
+            <asp:Panel ID="pnlLogged_Panel" Visible="false" runat="server">
+                <!--header section start -->
+                <div class="header_section">
+                    <div class="container-fluid">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                            <div class="logo">
+                                <a href="Login.aspx">
+                                    <img src="images/CoffeeStore.png"></a>
+                            </div>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarLoggedNav">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="Default.aspx">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="Products.aspx">Products</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="ShoppingCart.aspx">Shopping Cart</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="Reports.aspx">Reports</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="UserAccount.aspx">User Account</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="About.aspx">About Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="Contact.aspx">Contact Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="Logout.aspx">Logout</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <asp:Label ID="lblLogged_User" runat="server" ForeColor="Wheat" Text="Hello Guest!"> </asp:Label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <!--header section end -->
+            </asp:Panel>
+        </div>
+        <div style="min-height: 825px">
+            <div class="container-fluid">
+                <table border="0" style="min-height: 800px; width: 100%;">
+                    <tr>
+                        <td style="background-image: url(Images/top-view-roasted-coffee-beans.jpg); background-size: cover;">
+                            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="dvfooter">
+            <div class="copyright_section">
+                <div class="container">
+                    <p class="copyright_text"><%: DateTime.Now.Year %> - Coffee Store. 580 N. Berry St. Brea, CA 92821. Phone: (714) 784-6369</p>
+                </div>
+            </div>
+        </div>
+    </form>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+    </asp:PlaceHolder>
+</body>
+</html>

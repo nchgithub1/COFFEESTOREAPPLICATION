@@ -24,15 +24,6 @@ namespace CoffeeStore1
         protected global::System.Web.UI.WebControls.Panel pnlPaymentDetails;
 
         /// <summary>
-        /// lblUserPaymentMethod control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUserPaymentMethod;
-
-        /// <summary>
         /// lblProvider control.
         /// </summary>
         /// <remarks>
@@ -51,13 +42,13 @@ namespace CoffeeStore1
         protected global::System.Web.UI.WebControls.ListBox lstProvider;
 
         /// <summary>
-        /// RequiredFieldValidator1 control.
+        /// rfvProvider control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvProvider;
 
         /// <summary>
         /// lblNameonCard control.
@@ -78,13 +69,13 @@ namespace CoffeeStore1
         protected global::System.Web.UI.WebControls.TextBox txtNameonCard;
 
         /// <summary>
-        /// RequiredFieldValidator2 control.
+        /// rfvNameonCard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNameonCard;
 
         /// <summary>
         /// Label2 control.
@@ -105,13 +96,13 @@ namespace CoffeeStore1
         protected global::System.Web.UI.WebControls.TextBox txtCardNumber;
 
         /// <summary>
-        /// RequiredFieldValidator3 control.
+        /// rfvCardNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCardNumber;
 
         /// <summary>
         /// Label3 control.
@@ -132,13 +123,13 @@ namespace CoffeeStore1
         protected global::System.Web.UI.WebControls.TextBox txtExpiryDate;
 
         /// <summary>
-        /// RequiredFieldValidator4 control.
+        /// rfvExpiryDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvExpiryDate;
 
         /// <summary>
         /// lblSecurityCode control.
@@ -159,13 +150,13 @@ namespace CoffeeStore1
         protected global::System.Web.UI.WebControls.TextBox txtSecurityCode;
 
         /// <summary>
-        /// RequiredFieldValidator5 control.
+        /// rfvSecurityCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSecurityCode;
 
         /// <summary>
         /// Label4 control.

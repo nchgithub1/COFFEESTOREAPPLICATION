@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace CoffeeStore1
 {
@@ -12,11 +10,13 @@ namespace CoffeeStore1
             {
                 if (!IsPostBack)
                 {
+                    if(Session["PaymentID"] !=null) { 
                     //delete payment details for 
                     int paymentID = int.Parse(Session["PaymentID"].ToString());
                     int ShoppingSessionID = int.Parse(Session["ShoppingSessionID"].ToString());
                     ClearData(paymentID, ShoppingSessionID);
                     Session["grandAmount"] = Session["OrderID"] = Session["PaymentID"] = null;
+                    }
                 }
             }
             catch (Exception ex)
