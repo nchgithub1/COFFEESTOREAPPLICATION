@@ -137,9 +137,9 @@
                 <!--header section end -->
             </asp:Panel>
         </div>
-        <div style="min-height: 825px">
+        <div style="min-height: 1000px">
             <div class="container-fluid">
-                <table border="0" style="min-height: 800px; width: 100%;">
+                <table border="0" style="min-height: 999px; width: 100%;">
                     <tr>
                         <td style="background-image: url(Images/top-view-roasted-coffee-beans.jpg); background-size: cover;">
                             <asp:ContentPlaceHolder ID="MainContent" runat="server">

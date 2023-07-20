@@ -253,7 +253,6 @@ namespace CoffeeStore1
                 { 
                     txtShippingAddress.ReadOnly = false; 
                 }
-
             }
             catch (Exception ex)
             {

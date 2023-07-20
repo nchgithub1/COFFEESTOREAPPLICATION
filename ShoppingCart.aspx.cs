@@ -43,6 +43,10 @@ namespace CoffeeStore1
                 {
                     lblGrandTotal.Text = "Grand Total: " + resCartItemsGrandTotal[0].Grand_Amount.ToString();
                 }
+                else
+                {
+                    lblGrandTotal.Text = "";
+                }
             }
             catch (Exception ex)
             {
