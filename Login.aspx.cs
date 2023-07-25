@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using CoffeeStore1.Model;
 namespace CoffeeStore1
 {
+    //Login page to validate userid and password to enter into the coffee store application. 
     public partial class Login : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)

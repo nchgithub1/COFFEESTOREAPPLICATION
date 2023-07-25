@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace CoffeeStore1
 {
+    //OrderSummary page to display the payment method, estimated delivery and total value(s) with additional tax.
     public partial class OrderSummary : System.Web.UI.Page
     {
         private int orderId

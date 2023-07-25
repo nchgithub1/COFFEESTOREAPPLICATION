@@ -207,6 +207,12 @@
     <Content Include="css\bootstrap-reboot.min.css.map" />
     <Content Include="css\bootstrap.css.map" />
     <Content Include="css\bootstrap.min.css.map" />
+    <Content Include="Images\coffee4.png" />
+    <Content Include="Images\coffee5.png" />
+    <Content Include="Images\coffee6.png" />
+    <Content Include="Images\coffee7.PNG" />
+    <Content Include="Images\coffee8.png" />
+    <Content Include="Images\coffee9.png" />
     <Content Include="Images\top-view-roasted-coffee-beans.jpg" />
     <Content Include="libman.json" />
     <Content Include="CoffeeDataSet.xsc">

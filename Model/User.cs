@@ -5,6 +5,7 @@ namespace CoffeeStore1.Model
 {
     public class User
     {
+        //User class defines functions to display user(s) by  userid, display user validity and get list of users.
         public static List<SelectUserValidYN_1> SelectUserValidYN(string username, string passwd)
         {
             using (CoffeeEntities e = new CoffeeEntities())
@@ -28,6 +29,7 @@ namespace CoffeeStore1.Model
                 return e.SelectUser_Byid(userID).ToList();
             }
         }
+        //Methods to update existing user, add new user, add shopping session and add log message 
         public static int UpdateUser(int userid, string username, string passwd, string firstname, string lastname, string address,
                                      string city, string state, string zipcode, string telephone)
         {

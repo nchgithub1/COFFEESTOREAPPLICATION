@@ -4,6 +4,7 @@ using System.Web.UI.WebControls;
 
 namespace CoffeeStore1
 {
+    //Allow users to modify the shopping cart items shown in the gridview and display the grand totals.
     public partial class ShoppingCart : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -10,7 +7,7 @@ namespace CoffeeStore1.Model
 {
     public class encrypt_decrypt
     {
-
+        //Encrypting and decryption functions are defined as methods.
         public static string Encode(string inputValue)
         {
             try
@@ -71,6 +68,5 @@ namespace CoffeeStore1.Model
                 return ex.Message;
             }
         }
-
     }
 }

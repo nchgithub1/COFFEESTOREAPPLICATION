@@ -4,6 +4,7 @@ using System.Linq;
 
 namespace CoffeeStore1
 {
+    //PaymentDetails page to validate information entered by the user and to store payment details information in the SQL database.
     public partial class PaymentDetails : System.Web.UI.Page
     {
         private Boolean PaymentExistsYN

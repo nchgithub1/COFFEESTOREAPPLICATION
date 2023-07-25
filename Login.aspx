@@ -1,6 +1,4 @@
-﻿<%--<%@ Page Title="Login" Language="C#" MasterPageFile="~/MSite.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="CoffeeStore1.Login" %>--%>
-
-<%@ Page Title="Login" Language="C#" MasterPageFile="~/MSite.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="CoffeeStore1.Login" %>
+﻿<%@ Page Title="Login" Language="C#" MasterPageFile="~/MSite.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="CoffeeStore1.Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <main aria-labelledby="title">

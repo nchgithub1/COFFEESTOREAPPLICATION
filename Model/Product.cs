@@ -6,6 +6,7 @@ namespace CoffeeStore1.Model
 {
     public class Product
     {
+        //Methods to add new cart item, delete existing cart item, update existing cart item, display list of cartitems by sessionid, and display list of grand totals by session id for cart items
         public static int AddCartItem(int sessionid, int productid, int quantity, string addedUser)
         {
             CoffeeEntities e = new CoffeeEntities();
